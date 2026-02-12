@@ -410,3 +410,193 @@ FUNCTIONS:
 """
 
 
+# ============================================================================
+# OPERATOR SYNOPSIS
+# ============================================================================
+"""
+OPERATORS IN PYTHON
+Operators are symbols used to perform operations on values and variables.
+They perform arithmetic, comparison, logical, assignment, and bitwise operations.
+"""
+
+# ============================================================================
+# ARITHMETIC OPERATORS
+# ============================================================================
+# Perform mathematical calculations
+
+a = 10
+b = 3
+
+addition = a + b                           # 13
+subtraction = a - b                        # 7
+multiplication = a * b                     # 30
+division = a / b                           # 3.3333... (float)
+floor_division = a // b                    # 3 (integer division)
+modulo = a % b                             # 1 (remainder)
+exponent = a ** b                          # 1000 (10^3)
+
+print(f"Addition: {addition}")
+print(f"Floor Division: {floor_division}")
+print(f"Modulo: {modulo}")
+print(f"Exponent: {exponent}")
+
+
+# ============================================================================
+# COMPARISON OPERATORS
+# ============================================================================
+# Compare two values and return True/False
+
+x = 5
+y = 10
+
+print(f"{x} == {y}: {x == y}")              # False (equal to)
+print(f"{x} != {y}: {x != y}")              # True (not equal to)
+print(f"{x} < {y}: {x < y}")               # True (less than)
+print(f"{x} > {y}: {x > y}")               # False (greater than)
+print(f"{x} <= {y}: {x <= y}")             # True (less than or equal)
+print(f"{x} >= {y}: {x >= y}")             # False (greater than or equal)
+
+
+# ============================================================================
+# LOGICAL OPERATORS
+# ============================================================================
+# Combine or negate boolean values
+
+is_student = True
+has_scholarship = False
+
+result = is_student and has_scholarship    # False (both must be True)
+result = is_student or has_scholarship     # True (at least one must be True)
+result = not is_student                    # False (negates the value)
+
+print(f"True and False: {is_student and has_scholarship}")
+print(f"True or False: {is_student or has_scholarship}")
+print(f"not True: {not is_student}")
+
+# Chaining comparisons
+age = 25
+is_adult = 18 <= age < 65                  # True
+print(f"Is adult working age: {is_adult}")
+
+
+# ============================================================================
+# ASSIGNMENT OPERATORS
+# ============================================================================
+# Assign and modify values
+
+value = 5                                  # =   (assign)
+value += 3                                 # +=  (add and assign) = 8
+value -= 2                                 # -=  (subtract and assign) = 6
+value *= 2                                 # *=  (multiply and assign) = 12
+value /= 3                                 # /=  (divide and assign) = 4.0
+value //= 2                                # //= (floor divide and assign) = 2.0
+value %= 3                                 # %=  (modulo and assign) = 2.0
+value **= 2                                # **= (exponent and assign) = 4.0
+
+print(f"Final value: {value}")
+
+
+# ============================================================================
+# MEMBERSHIP OPERATORS
+# ============================================================================
+# Check if a value exists in a sequence
+
+fruits = ["apple", "banana", "cherry"]
+search = "apple"
+
+is_in = search in fruits                   # True
+is_not_in = search not in fruits           # False
+
+print(f"'apple' in fruits: {is_in}")
+print(f"'grape' not in fruits: {'grape' not in fruits}")
+
+# Works with strings
+text = "Python"
+print(f"'P' in 'Python': {'P' in text}")
+
+
+# ============================================================================
+# IDENTITY OPERATORS
+# ============================================================================
+# Check if two variables refer to the same object
+
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+list3 = list1
+
+is_same = list1 is list3                   # True (same object)
+is_not_same = list1 is list2               # False (different objects, same content)
+
+print(f"list1 is list3: {is_same}")
+print(f"list1 is list2: {is_not_same}")
+print(f"list1 == list2: {list1 == list2}")  # True (equal content)
+
+# Checking for None
+value = None
+print(f"value is None: {value is None}")
+print(f"value is not None: {value is not None}")
+
+
+# ============================================================================
+# BITWISE OPERATORS
+# ============================================================================
+# Operate on binary representations of integers
+
+a = 12                                     # Binary: 1100
+b = 10                                     # Binary: 1010
+
+print(f"{a} & {b} = {a & b}")              # & (AND) = 8 (1000)
+print(f"{a} | {b} = {a | b}")              # | (OR) = 14 (1110)
+print(f"{a} ^ {b} = {a ^ b}")              # ^ (XOR) = 6 (0110)
+print(f"~{a} = {~a}")                      # ~ (NOT) = -13
+print(f"{a} << 1 = {a << 1}")              # << (Left shift) = 24
+print(f"{a} >> 1 = {a >> 1}")              # >> (Right shift) = 6
+
+
+# ============================================================================
+# OPERATOR PRECEDENCE
+# ============================================================================
+"""
+Order of evaluation (highest to lowest):
+1. ** (Exponentiation)
+2. +x, -x, ~x (Unary operators)
+3. *, /, //, % (Multiplication, Division, etc.)
+4. +, - (Addition, Subtraction)
+5. <<, >> (Bitwise shifts)
+6. & (Bitwise AND)
+7. ^ (Bitwise XOR)
+8. | (Bitwise OR)
+9. ==, !=, <, >, <=, >= (Comparisons)
+10. is, is not, in, not in (Identity, Membership)
+11. not (Logical NOT)
+12. and (Logical AND)
+13. or (Logical OR)
+
+Use parentheses to clarify/override precedence:
+"""
+
+result = 2 + 3 * 4                         # 14 (* before +)
+result = (2 + 3) * 4                       # 20 (parentheses override)
+
+print(f"2 + 3 * 4 = {2 + 3 * 4}")
+print(f"(2 + 3) * 4 = {(2 + 3) * 4}")
+
+
+# ============================================================================
+# KEY FEATURES SUMMARY
+# ============================================================================
+"""
+OPERATORS:
+1. ARITHMETIC: +, -, *, /, //, %, **
+2. COMPARISON: ==, !=, <, >, <=, >=
+3. LOGICAL: and, or, not
+4. ASSIGNMENT: =, +=, -=, *=, /=, //=, %=, **=
+5. MEMBERSHIP: in, not in
+6. IDENTITY: is, is not
+7. BITWISE: &, |, ^, ~, <<, >>
+8. PRECEDENCE: ** > *, /, //, % > +, - > comparisons > logical
+9. CHAINING: Comparisons can be chained (a < b < c)
+10. OVERLOADABLE: Custom classes can override operator behavior
+"""
+
+
